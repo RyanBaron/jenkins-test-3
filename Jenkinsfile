@@ -1,8 +1,4 @@
 pipeline {
-  agent any
-  
-  echo "\nInside the pipeline\n"
-
   node('jenkins_node_1') {
 
     echo "\nInside the node jenkins_node_1\n"
