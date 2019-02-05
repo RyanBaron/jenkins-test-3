@@ -1,15 +1,21 @@
 pipeline {
-  agent jenkins_node_1
+  agent any
+  
+  echo "\nInside the pipeline\n"
 
-  stages {
-    stage ('Compile Stage') {
-      steps {
-        echo "Compile Stage Running"
+  node('jenkins_node_1') {
+
+    echo "\nInside the node jenkins_node_1\n"
+    stages {
+      stage ('Compile Stage') {
+        steps {
+          echo "\nCompile Stage Running\n"
+          }
       }
-    }
-    stage ('Test Stage') {
-      steps {
-        echo "Test Stage Running"
+      stage ('Test Stage') {
+        steps {
+          echo "\nTest Stage Running\n"
+        }
       }
     }
   }
